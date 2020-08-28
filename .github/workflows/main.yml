@@ -20,7 +20,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
-#      - run: npm run build --if-present
-#      - run: npm test
-#        env:
-#          CI: true
+      - run: yarn run deploy
+        env:
+          CI: true
+          NODE_DEBUG: gh-pages
+          NODE_ENV: production
